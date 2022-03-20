@@ -1,3 +1,12 @@
 .login-box{
-    background-color: #2b2e3142;
+    background-color: #2b2e319a;
+}
+
+body{
+  background-color: #1f2029;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 4%;
+
 }

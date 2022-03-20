@@ -1,12 +1,28 @@
 from quart import Quart, flash, redirect, render_template, request, session
+from werkzeug.exceptions import HTTPException
 
 app = Quart(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
 
 VALID_CREDENTIALS = {
     "username": "admin",
     "password": "admin"
 }
+
+@app.errorhandler(HTTPException)
+async def error_handler(error: HTTPException):
+    if error.code == 400:
+        return "Bruh, what is you doing 👀", error.code
+    
+    if error.code == 403:
+        return "You are not allowed to be here", error.code
+    
+    if error.code == 404:
+        return "Sorry, page not found!", error.code
+    
+    if error.code >= 500:
+        return {error.code: error.description}, error.code
 
 @app.route('/')
 async def index():
