@@ -11,6 +11,7 @@
         <link href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" rel="stylesheet" />        
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+
         <!-- ========== END CSS ========== -->
     </head>
 
@@ -25,8 +26,8 @@
                                     <div class="card-front">
                                         <div class="center-wrap">
                                             <div class="section text-center">
-                                                <form action="/login" method="POST" class="px-5 py-3">
-                                                    <h4 class="mb-4 pb-3">Sign In</h4>
+                                                <form action="/register" method="POST" class="px-5 py-3">
+                                                    <h4 class="mb-4 pb-3">Sign Up</h4>
                                                     {% with messages = get_flashed_messages() %}
                                                     {% if messages %}
                                                         {% for message in messages %}
@@ -34,7 +35,6 @@
                                                         {% endfor %}
                                                     {% endif %}
                                                     {% endwith %}
-
                                                     <div class="form-group">
                                                         <input type="text" name="username" class="form-style" placeholder="Your Username" id="username" autocomplete="off" value="{{ username }}">
                                                         <i class="input-icon uil uil-user"></i>
@@ -43,12 +43,13 @@
                                                         <input type="password" name="password" class="form-style" placeholder="Your Password" id="password" autocomplete="off" value="{{ password }}">
                                                         <i class="input-icon uil uil-lock-alt"></i>
                                                     </div>
-                                                    <button type="submit" class="btn mt-4">login</button>
-                                                    <p class="mb-0 mt-4 text-center"><a href="/register" class="link">Need an account?</a></p>
+                                                    <button type="submit" class="btn mt-4">register</button>
+                                                    <p class="mb-0 mt-4 text-center"><a href="/login" class="link">Already have an account?</a></p>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
